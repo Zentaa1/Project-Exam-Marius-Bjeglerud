@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=K2D:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Street Dreams</title>
+</head>
+<body>
+    <header>
+            <div class="nav">
+                <ul class="headerUL">
+                    <li class="headerLI"><a href=""><img src="../assets/Logo.png" alt=""></a></li>
+                    <li class="headerLI headerText"><a href="">Home</a></li>
+                    <li class="headerLI headerText"><a href="">Members</a></li>
+                    <li class="headerLI headerText"><a href="">About Us</a></li>
+                    <li class="headerLI headerText"><a href="">Contact Us</a></li>
+                </ul>
+            </div>
+    </header>
+    <img src="../assets/PageHeaderImage.png" class="indexBgImg" alt="Background Image">
+    <p class="scrollToTopText">Scroll To Top</p>
+    <span class="material-icons md-48 scrollToTop">north</span>
+    <div class="contactUsInfo">
+        <div>
+            <h1>Contact Us</h1>
+            <p>If you have any questions,
+                Please feel free to fill out the form below,
+                And we will answer as fast as we can!
+            </p>
+        </div>
+        <div>
+            <img src="../assets/ContactUsImage1.png" alt="Contact Us">
+        </div>
+    </div>
+    <div class="contactform">
+        <form id="contactUsForm">
+            <div class="contactName contact">
+                <label for="name">Name:</label>
+                <input type="name" name="name" id="name" required>
+            </div>
+            <div class="contactEmail contact">
+                <label for="email">E-mail:</label>
+                <input type="email" name="email" id="email" required>
+            </div>
+            <div class="contactSubject contact">
+                <label for="subject">Subject:</label>
+                <input type="subject" name="subject" id="subject" required>
+            </div>
+            <div class="contactMessage contact">
+                <label for="message">Message:</label>
+                <textarea type="text" name="message" id="message" required></textarea>
+            </div>
+            <div>
+                <label for="formbutton"></label>
+                <input class="formButton" type="submit" name="formbutton" id="formbutton">
+            </div>
+        </form>
+    </div>
+    <div class="formComplete">
+        <p>Message was sent!</p>
+        <p>You will get an answer shortly.</p>
+    </div>
+    <footer>
+        <img src="../assets/Logo.png" alt="Logo">
+        <ul class="footerUL">
+            <li class="footerLI"><a href="">Apply</a></li>
+            <li class="footerLI"><a href="">Members</a></li>
+        </ul>
+    </footer>
+    <script type="module" src="../src/contactUs/contactUs.js"></script>
+</body>
+</html>
