@@ -213,7 +213,7 @@ footer {
 
 /* Index */
 
-.indexBgImg {
+.pageBgImg, .indexBgImg {
     width: 100%;
     max-width: 100%;
     height: auto;
@@ -434,13 +434,14 @@ footer {
     display: grid;
     grid-template-columns: 1fr 1fr;
     place-items: center;
+    padding-top: 50px;
 }
 
 .memberDiv h2{
-        text-align: center;
-        position: relative;
-        bottom: 40px;
-        color: #EEEEEE;
+    text-align: center;
+    position: relative;
+    bottom: 40px;
+    color: #EEEEEE;
 }
 
 .memHoverScale {
@@ -524,7 +525,7 @@ footer {
     width: 100%;
 }
 
-.aboutUsBot div:nth-child(2) h1 {
+.aboutUsBot div:nth-child(2) h2 {
     font-size: 40px;
 }
 
@@ -691,6 +692,20 @@ footer {
     .carousel, .carouselItem, .carouselItem a img {
         height: 300px;
     }
+
+    .members {
+        grid-template-columns: 1fr;
+    }
+    .aboutUsTop div:nth-child(1) h1, .aboutUsBot div:nth-child(2) h2, .contactUsInfo :nth-child(1) h1 {
+        font-size: 24px;
+    }
+
+    .aboutUsTop div:nth-child(1) p, .aboutUsBot div:nth-child(2) p, .contactUsInfo :nth-child(1) p {
+        font-size: 18px;
+    }
+    .aboutUsTop > div, .aboutUsBot > div, .contactUsInfo > div {
+        margin: 20px;
+    }
 }
 
 @media screen and (max-width: 700px) {
@@ -769,6 +784,16 @@ footer {
     }
 }
 
+@media screen and (max-width: 600px) {
+    .indexStreetDreams, .indexContactUs, .aboutUsTop, .aboutUsBot, .contactUsInfo {
+        flex-direction: column;
+    }
+
+    .indexStreetDreams :nth-child(1), .indexContactUs :nth-child(2), .aboutUsTop :nth-child(1), .aboutUsBot :nth-child(2), .contactUsInfo :nth-child(1) {
+        order: 1;
+    }
+}
+
 @media screen and (max-width: 500px) {
     .indexStreetDreams :nth-child(1) h1, .indexContactUs :nth-child(2) h1 {
         font-size: 20px;
@@ -781,14 +806,6 @@ footer {
     .button {
         font-size: 14px;
         padding: 2px 8px
-    }
-
-    .indexStreetDreams, .indexContactUs {
-        flex-direction: column;
-    }
-
-    .indexStreetDreams :nth-child(1), .indexContactUs :nth-child(2) {
-        order: 1;
     }
 
     footer {
@@ -808,4 +825,31 @@ footer {
     .footerLeft img {
         width: 200px;
     }
+
+    .memberDiv, .memberDiv a img, .memberDiv h2 {
+        width: 80%;
+    }
+
+    .memberDiv {
+        text-align: center;
+    }
+
+    .memberDiv h2{
+        text-align: center;
+        position: relative;
+        bottom: 40px;
+        left: 10%;
+        color: #EEEEEE;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    #name {
+        width: 200px
+    }
+
+    #subject, #email, #message {
+        width: 250px;
+    }
+
 }
