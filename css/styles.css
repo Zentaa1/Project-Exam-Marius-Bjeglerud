@@ -355,6 +355,10 @@ footer {
     width: 100%;
 }
 
+.contactform {
+    margin-bottom: 5rem;
+}
+
 .contactform form {
     display: grid;
     place-content: center;
@@ -848,6 +852,9 @@ footer {
 
     .indexStreetDreams :nth-child(1), .indexContactUs :nth-child(2), .aboutUsTop :nth-child(1), .aboutUsBot :nth-child(2), .contactUsInfo :nth-child(1), .applyTop :nth-child(1) {
         order: 1;
+    }
+    .formComplete {
+        bottom: 90%;
     }
 }
 
