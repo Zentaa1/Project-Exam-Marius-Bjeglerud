@@ -247,7 +247,7 @@ footer {
     justify-content: center;
     align-items: center;
     opacity: 0;
-    transform: translateX(0);
+    transform: translateX(-100%);
     transition: transform 1.5s, opacity 1.5s;
 }
 
@@ -275,7 +275,7 @@ footer {
     justify-content: center;
     align-items: center;
     opacity: 0;
-    transform: translateX(100);
+    transform: translateX(100%);
     transition: transform 1.5s, opacity 1.5s;
     margin-top: 50px;
 }
@@ -442,7 +442,22 @@ footer {
     position: relative;
     bottom: 40px;
     color: #EEEEEE;
+    z-index: 3;
 }
+
+.imageOverlay{
+    position:relative;
+    display:inline-block;
+  }
+
+.imageOverlay:after {
+    content:'';
+    position:absolute;
+    left:0; top:0;
+    width:100%; height:100%;
+    display:inline-block;
+    background: linear-gradient(to bottom, rgba(0,47,75,0) 50%,rgba(0, 172, 181, 1) 100%);
+  }
 
 .memHoverScale {
     transform: scale(1.05);
@@ -453,11 +468,19 @@ footer {
     box-shadow: 0px 0px 5px 1px #00acb5;
 }
 
-/* Members */
+/* Member info */
+
+.memberInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
 .memberInfo div:nth-child(1) a {
     text-decoration: none;
     font-size: 26px;
+    display: flex;
 }
 
 .memberInfo div:nth-child(1) {
@@ -468,6 +491,11 @@ footer {
     color: #EEEEEE;
 }
 
+.memberButton {
+    text-decoration: none;
+    color: #EEEEEE;
+}
+
 .memberInfo div:nth-child(1) a, .memberInfo div:nth-child(1) h1 {
     margin-left: 70px;
     margin-right: 70px;
@@ -475,6 +503,19 @@ footer {
 
 .memberInfo :nth-child(2) img {
     max-width: 500px;
+    width: auto;
+    height: auto;
+}
+
+.memberInfo div:nth-child(3) {
+    color: #EEEEEE;
+    margin: 0 5vh;
+    margin-bottom: 3vh;
+}
+
+.memberInfo figure img{
+    padding: 0 1rem;
+    max-width: 1000px;
     width: auto;
     height: auto;
 }
@@ -563,7 +604,7 @@ footer {
 }
 
 .applyTop div:nth-child(1) p {
-    font-size: 24px;
+    font-size: 20px;
     max-width: 400px;
 }
 
@@ -594,15 +635,20 @@ footer {
 }
 
 .apply:nth-child(6) {
-    grid-column: 2;
+    grid-column-start: 2;
+    grid-column-end: 4;
+    place-items: center;
 }
 
 .apply:nth-child(7) {
-    grid-column: 2;
+    grid-column-start: 2;
+    grid-column-end: 4;
+    place-items: center;
 }
 
 .apply:nth-child(8) {
-    grid-column: 2;
+    grid-column-start: 2;
+    grid-column-end: 4;
 }
 
 .apply {
@@ -637,7 +683,7 @@ footer {
 }
 
 #applyMods, #fileInput {
-    width: 725px;
+    width: 100%;
     resize: none;
     height: 200px;
 }
@@ -649,7 +695,6 @@ footer {
 .dragAndDrop {
     position: relative;
     bottom: 20%;
-    left: 50%;
     text-align: center;
     width: 300px;
     height: 50px;
@@ -687,6 +732,15 @@ footer {
 
 
 /* RESPONSIVE */
+@media screen and (max-width: 1300px) {
+    .apply:nth-child(2), .apply:nth-child(4) {
+        grid-column: 2;
+    }
+    .indexStreetDreams, .indexContactUs {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
 
 @media screen and (max-width: 1000px) {
     .carousel, .carouselItem, .carouselItem a img {
@@ -696,15 +750,18 @@ footer {
     .members {
         grid-template-columns: 1fr;
     }
-    .aboutUsTop div:nth-child(1) h1, .aboutUsBot div:nth-child(2) h2, .contactUsInfo :nth-child(1) h1 {
+    .aboutUsTop div:nth-child(1) h1, .aboutUsBot div:nth-child(2) h2, .contactUsInfo div:nth-child(1) h1, .applyTop div:nth-child(1) h1 {
         font-size: 24px;
     }
 
-    .aboutUsTop div:nth-child(1) p, .aboutUsBot div:nth-child(2) p, .contactUsInfo :nth-child(1) p {
+    .aboutUsTop div:nth-child(1) p, .aboutUsBot div:nth-child(2) p, .contactUsInfo div:nth-child(1) p, .applyTop div:nth-child(1) p {
         font-size: 18px;
     }
     .aboutUsTop > div, .aboutUsBot > div, .contactUsInfo > div {
         margin: 20px;
+    }
+    #applyForm {
+        grid-template-columns: 10% repeat(2, 40%) 10%;
     }
 }
 
@@ -733,7 +790,7 @@ footer {
     .nav-menu {
         display: flex;
         justify-content: center;
-        position: absolute;
+        position: fixed;
         left: -100%;
         top: 0;
         gap: 0;
@@ -785,11 +842,11 @@ footer {
 }
 
 @media screen and (max-width: 600px) {
-    .indexStreetDreams, .indexContactUs, .aboutUsTop, .aboutUsBot, .contactUsInfo {
+    .indexStreetDreams, .indexContactUs, .aboutUsTop, .aboutUsBot, .contactUsInfo, .applyTop {
         flex-direction: column;
     }
 
-    .indexStreetDreams :nth-child(1), .indexContactUs :nth-child(2), .aboutUsTop :nth-child(1), .aboutUsBot :nth-child(2), .contactUsInfo :nth-child(1) {
+    .indexStreetDreams :nth-child(1), .indexContactUs :nth-child(2), .aboutUsTop :nth-child(1), .aboutUsBot :nth-child(2), .contactUsInfo :nth-child(1), .applyTop :nth-child(1) {
         order: 1;
     }
 }
@@ -826,8 +883,13 @@ footer {
         width: 200px;
     }
 
-    .memberDiv, .memberDiv a img, .memberDiv h2 {
+    .memberDiv, .memberDiv a img, .memberDiv h2, .imageOverlay {
         width: 80%;
+    }
+
+    .imageOverlay:after {
+        width: 80%;
+        left: 10%;
     }
 
     .memberDiv {
@@ -841,6 +903,25 @@ footer {
         left: 10%;
         color: #EEEEEE;
     }
+    #applyForm {
+        grid-template-columns: 5% 90% 5%;
+    }
+    .apply:nth-child(6) {
+        grid-column: 2;
+    }
+    
+    .apply:nth-child(7) {
+        grid-column: 2;
+    }
+    .memberInfo div:nth-child(1) a, .memberInfo div:nth-child(1) h1 {
+        margin: 0 30px;
+    }
+}
+
+@media screen and (max-width: 430px) {
+    .mobileLogo {
+        width: 100px;
+    }
 }
 
 @media screen and (max-width: 400px) {
@@ -851,5 +932,35 @@ footer {
     #subject, #email, #message {
         width: 250px;
     }
+    .dragAndDrop {
+        width: 150px;
+    }
+    .memberInfo div:nth-child(1) a, .memberInfo div:nth-child(1) h1 {
+        font-size: 20px;
+    }
+    .memberInfo div:nth-child(3) h2 {
+        font-size: 20px;
+    }
+    .memberInfo div:nth-child(3) p {
+        font-size: 14px;
+    }
+    .memberInfo div:nth-child(3) {
+        margin: 0 1vh;
+    }
+    .memberDiv h2 {
+        font-size: 20px;
+    }
+}
 
+@media screen and (max-width: 300px){
+    .mobileLogo {
+        width: 50px;
+    }
+    .memberDiv h2 {
+        font-size: 15px;
+        bottom: 25px;
+    }
+    .memberInfo div:nth-child(1) a, .memberInfo div:nth-child(1) h1 {
+        margin: 0 10px;
+    }
 }

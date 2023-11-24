@@ -1,12 +1,9 @@
-import fetchApi from "../fetchApi.js";
+import getDataFromLocalStorage from "../getDataFromLocalStorage.js";
 
 export default async function carousel() {
-  const url = 'https://cms-ca.bjeglerud.com/wp-json/wp/v2/posts/?per_page=30';
-  const carouselData = await fetchApi(url);
+  const carouselData = getDataFromLocalStorage();
 
   const carouselContainer = document.querySelector('.carousel');
-
-  console.log(carouselData)
 
   let isPaused = false;
 
@@ -23,10 +20,14 @@ export default async function carousel() {
     carouselLink.setAttribute('href', `member.html?id=${id}`);
     carouselLink.setAttribute('post-id', id)
     carouselItem.appendChild(carouselLink)
+
+    const imageOverlay = document.createElement('div');
+    imageOverlay.classList.add('imageOverlay');
+    carouselLink.appendChild(imageOverlay);
     
     const cardImage = document.createElement('img');
     cardImage.src = image;
-    carouselLink.appendChild(cardImage);
+    imageOverlay.appendChild(cardImage);
 
     const cardName = document.createElement('h2');
     cardName.textContent = name;

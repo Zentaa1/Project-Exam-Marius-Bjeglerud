@@ -1,12 +1,13 @@
-import fetchApi from "../fetchApi.js";
+import getDataFromLocalStorage from "../getDataFromLocalStorage.js";
 
 async function members() {
 
     try {
         const memberInfo = document.querySelector('.members')
 
-        const url = 'https://cms-ca.bjeglerud.com/wp-json/wp/v2/posts/?per_page=30';
-        const members = await fetchApi(url);
+        const members = getDataFromLocalStorage();
+
+        console.log(members);
 
         members.forEach(post => {
             const image = post.jetpack_featured_media_url;
@@ -22,10 +23,14 @@ async function members() {
             memberLink.setAttribute('href', `member.html?id=${id}`);
             memberLink.setAttribute('post-id', id)
             memberDiv.appendChild(memberLink)
+
+            const imageOverlay = document.createElement('div');
+            imageOverlay.classList.add('imageOverlay');
+            memberLink.appendChild(imageOverlay);
             
             const cardImage = document.createElement('img');
             cardImage.src = image;
-            memberLink.appendChild(cardImage);
+            imageOverlay.appendChild(cardImage);
         
             const cardName = document.createElement('h2');
             cardName.textContent = name;
