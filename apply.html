@@ -79,38 +79,48 @@
             <div class="apply">
                 <label for="applyName">Name:</label>
                 <input type="text" name="applyName" id="applyName">
+                <span class="applySpan" id="applyNameSpan"></span>
             </div>
             <div class="apply">
                 <label for="applyMail">E-Mail:</label>
-                <input type="text" name="applyMail" id="applyName">
+                <input type="text" name="applyMail" id="applyMail">
+                <span class="applySpan" id="applyEmailSpan"></span>
             </div>
             <div class="apply">
                 <label for="applyCarMake">Car Make and Model:</label>
                 <input type="text" name="applyCarMake" id="applyCarMake">
+                <span class="applySpan" id="applyCarSpan"></span>
             </div>
             <div class="apply">
                 <label for="applyLocated">Where are you located?</label>
                 <input type="text" name="applyLocated" id="applyLocated">
+                <span class="applySpan" id="applyLocationSpan"></span>
             </div>
             <div class="apply">
                 <label for="applyBirth">Birth Date:</label>
                 <input type="date" name="applyBirth" id="applyBirth">
+                <span class="applySpan" id="applyDateSpan"></span>
             </div>
             <div class="apply">
                 <label for="applyMods">What have you done to your car?</label>
                 <textarea name="applyMods" id="applyMods"></textarea>
+                <span class="applySpan" id="applyModsSpan"></span>
             </div>
             <div class="apply">
                 <label for="fileInput">Select or drag & drop images</label>
                 <input type="file" id="fileInput" accept="image/*" multiple>
                 <div id="uploadedImages"></div>
-                <div class="dragAndDrop" id="dragAndDrop">Drop files here</div>
+                <span class="applySpan" id="applyImgSpan"></span>
             </div>
             <div class="apply">
-                <label for=""></label>
+                <label for="applyButton"></label>
                 <input type="submit" name="applyButton" id="applyButton">
             </div>
         </form>
+    </div>
+    <div class="formComplete">
+        <p>Application was sent!</p>
+        <p>You will get an answer shortly.</p>
     </div>
     <footer>
         <div class="footerLeft">
@@ -124,12 +134,20 @@
         </div>
         <div class="footerRight">
             <ul class="footerUL">
-                <li class="footerLI"><a href="aboutus.html">About Us</li>
-                <li class="footerLI"><a href="contactus.html">Contact Us</li>
+                <li class="footerLI"><a href="aboutus.html">About Us</a></li>
+                <li class="footerLI"><a href="contactus.html">Contact Us</a></li>
+            </ul>
+        </div>
+        <div class="mobileFooter">
+            <ul class="footerUL">
+                <li class="footerLI"><a href="apply.html">Apply</a></li>
+                <li class="footerLI"><a href="members.html">Members</a></li>
+                <li class="footerLI"><a href="aboutus.html">About Us</a></li>
+                <li class="footerLI"><a href="contactus.html">Contact Us</a></li>
             </ul>
         </div>
     </footer>
-    <script type="module" src="../src/members/members.js"></script>
     <script src="/src/hamburger.js"></script>
+    <script src="/src/apply/apply.js"></script>
 </body>
 </html>

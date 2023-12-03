@@ -1,7 +1,8 @@
 import fetchApi from "../fetchApi.js";
+import { showLoading, hideLoading } from "../loader.js";
 
 async function memberPage() {
-
+    showLoading();
     try {
         const queryString = document.location.search;
         const params = new URLSearchParams(queryString);
@@ -21,10 +22,11 @@ async function memberPage() {
         memberDiv.innerHTML = `${memberData}`;
     
 
-
+        hideLoading();
     } catch (error) {
         console.log(error);
         window.alert('Something went wrong. Please try again later.')
+        hideLoading();
     }
 }
 

@@ -74,6 +74,65 @@ body, html {
     gap: 60px;
 }
 
+.mobileFooter {
+    display: none;
+    margin-bottom: 10px;
+}
+
+/* Loader */
+
+.loaderDiv {
+    display: grid;
+    place-items: center;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background-color: #303841;
+    opacity: 0.8;
+}
+
+.loader {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: block;
+    margin:15px auto;
+    position: fixed;
+    color: #FFF;
+    left: 40%;
+    box-sizing: border-box;
+    animation: shadowRolling 2s linear infinite;
+  }
+  
+  @keyframes shadowRolling {
+    0% {
+      box-shadow: 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0);
+    }
+    12% {
+      box-shadow: 100px 0 white, 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0);
+    }
+    25% {
+      box-shadow: 110px 0 white, 100px 0 white, 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0);
+    }
+    36% {
+      box-shadow: 120px 0 white, 110px 0 white, 100px 0 white, 0px 0 rgba(255, 255, 255, 0);
+    }
+    50% {
+      box-shadow: 130px 0 white, 120px 0 white, 110px 0 white, 100px 0 white;
+    }
+    62% {
+      box-shadow: 200px 0 rgba(255, 255, 255, 0), 130px 0 white, 120px 0 white, 110px 0 white;
+    }
+    75% {
+      box-shadow: 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0), 130px 0 white, 120px 0 white;
+    }
+    87% {
+      box-shadow: 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0), 130px 0 white;
+    }
+    100% {
+      box-shadow: 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0);
+    }
+  }
 
 /* Nav and footer */
 
@@ -432,6 +491,10 @@ footer {
     border-top-right-radius: 0;
 }
 
+.nameSpan, .emailSpan, .subjectSpan, .messageSpan {
+    color: red;
+}
+
 /* Members */
 
 .members {
@@ -470,6 +533,11 @@ footer {
 
 .memHoverShadow {
     box-shadow: 0px 0px 5px 1px #00acb5;
+}
+
+.showMoreDiv {
+    display: grid;
+    place-content: center;
 }
 
 /* Member info */
@@ -730,7 +798,9 @@ footer {
     box-shadow: 0px 0px 5px 1px #00acb5;
 }
 
-
+.applySpan {
+    color: red;
+}
 
 /* KEYFRAMES */
 
@@ -879,11 +949,19 @@ footer {
         justify-content: flex-start;
     }
 
-    .footerMiddle, .footerLeft, .footerRight {
+    .footerLeft {
         padding: 10px 0;
         justify-content: center;
         align-items: center;
         width: auto;
+    }
+
+    .mobileFooter {
+        display: block;
+    }
+
+    .footerRight, .footerMiddle {
+        display: none;
     }
 
     .footerLeft img {

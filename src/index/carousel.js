@@ -1,6 +1,10 @@
 import getDataFromLocalStorage from "../getDataFromLocalStorage.js";
+import { showLoading, hideLoading } from "../loader.js";
+
+showLoading();
 
 export default async function carousel() {
+
   const carouselData = getDataFromLocalStorage();
 
   const carouselContainer = document.querySelector('.carousel');
@@ -9,7 +13,7 @@ export default async function carousel() {
 
   carouselData.forEach(post => {
     const image = post.jetpack_featured_media_url;
-    const rawName = post.excerpt.rendered;
+    const rawName = post.title.rendered;
     const id = post.id
     const name = rawName.replace(/<\/?[^>]+(>|$)/g, "");
 
@@ -27,6 +31,7 @@ export default async function carousel() {
     
     const cardImage = document.createElement('img');
     cardImage.src = image;
+    cardImage.alt = name
     imageOverlay.appendChild(cardImage);
 
     const cardName = document.createElement('h2');
@@ -80,3 +85,5 @@ export default async function carousel() {
 
   requestAnimationFrame(updateCarousel);
 }
+
+hideLoading();
