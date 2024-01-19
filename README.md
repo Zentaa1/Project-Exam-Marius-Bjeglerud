@@ -1,4 +1,6 @@
 # StreetDreams
+![image](https://github.com/Zentaa1/Project-Exam-Marius-Bjeglerud/assets/117643567/15cbbc55-301c-420d-ac27-2536a02a2e00)
+
 
 StreetDreams is a platform tailored for car enthusiasts, designed to offer an engaging experience with a focus on member-generated content. Crafted as a project exam, the site utilizes HTML, CSS, JavaScript, and WordPress as a CMS to fetch various member posts via an API. The platform boasts several key features, including an automatic sliding carousel, scroll animations, JavaScript-based form validation, and the ability to display a maximum of 10 posts fetched from the API. Additionally, it employs query strings to dynamically generate content for different member posts, updating the page content based on the post selected.
 
